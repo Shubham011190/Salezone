@@ -3,8 +3,16 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-    Hello
+    <div className='grid-container'>
+      <header>
+        <a href='/'>Wamazona</a>
+      </header>
+      <main>
+        Product List
+      </main>
+      <footer>
+        All rights reserved.
+      </footer>
     </div>
   );
 }
