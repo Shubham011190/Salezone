@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import data from './data.json';
+import Products from './components/Products';
 
 class App extends React.Component {
   constructor() {
@@ -18,12 +19,20 @@ class App extends React.Component {
           <a href='/'>Wamazona</a>
         </header>
         <main>
-          Product List
+          <div className='content'>
+            <div className='main'>
+              <Products products={this.state.products}/>
+            </div>
+            <div className='sidebar'>
+              Cart Items
+            </div>
+            </div>
       </main>
         <footer>
           All rights reserved.
       </footer>
       </div>
+      
     );
   }
 }
