@@ -10,9 +10,25 @@ class App extends React.Component {
     this.state = {
       products: data.products,
       size: "",
-      sort:"",
+      sort: "",
+      cartItems : [],
     }
   }
+
+  addToCart = (product) => {
+    const cartItems = this.state.cartItems.slice();
+    let alreadyInCart = false;
+    cartItems.forEach((item) => {
+      if (item._id === product._id) {
+        item.count++;
+        alreadyInCart = true;
+      }
+    });
+    if (!alreadyInCart) {
+      cartItems.push({ ...product, count: 1 }}
+    }
+  }
+
   sortProducts = (event)=> {
     console.log(event.target.value);
     const sort = event.target.value;
@@ -21,7 +37,7 @@ class App extends React.Component {
       products: this.state.products.slice().sort((a, b) => (
         sort === "lowest" ? ((a.price > b.price) ? 1 : -1) : 
           sort === "highest" ? ((a.price < b.price) ? 1 : -1) :
-            ((a._id > b._id) ? 1 : -1)
+            ((a._id < b._id) ? 1 : -1)
       ))
     }))
 
