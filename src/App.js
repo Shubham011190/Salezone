@@ -15,6 +15,9 @@ class App extends React.Component {
       cartItems : [],
     }
   }
+  removeFromCart = (item)=>{
+  
+  }
 
   addToCart = (product) => {
     const cartItems = this.state.cartItems.slice();
@@ -74,7 +77,7 @@ class App extends React.Component {
               <Products products={this.state.products} addToCart={this.addToCart}/>
             </div>
             <div className='sidebar'>
-              <Cart cartItems={this.state.cartItems} />
+              <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart} />
             </div>
             </div>
       </main>
