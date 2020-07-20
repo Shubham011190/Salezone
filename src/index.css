@@ -148,6 +148,18 @@ footer{
   flex: 1;
 }
 
+/* Cart */
+
+.cart{
+  margin: 1.4rem;
+  padding: 1rem;
+  display: flex;
+}
+
+.cart-header{
+  justify-content: center;
+  border-bottom: 0.1rem #c0c0c0 solid;
+}
 
 
 
