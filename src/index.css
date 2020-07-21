@@ -249,7 +249,11 @@ input{
   right: 1rem;
   top: 1rem;
   z-index: 1000;
-  border-radius: 20%;
-  border: 0.1rem #c0c0c0 solid;
+  border: 0.1rem white solid;
+  outline: none;
+  background-color: #fff;
   text-align: center;
+}
+#sizeBtn{
+  cursor: default;
 }

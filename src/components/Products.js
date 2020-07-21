@@ -42,7 +42,7 @@ export default class Products extends Component {
                 {product && (
                     <Modal isOpen={true} onRequestClose={this.closeModal}>
                         <Zoom>
-                            <button onClick={this.closeModal} className='close-modal' >X</button>
+                            <button onClick={this.closeModal} className='close-modal' ><strong>X</strong></button>
                             <div className='product-details'>
                                 <img src={product.image} alt={product.title} />
                                 <div className='product-details-description'>
@@ -51,7 +51,7 @@ export default class Products extends Component {
                                     <p>Available Sizes : {" "}
                                          {product.availableSizes.map((x) => (
                                              <span>{" "}
-                                                 <button className='button'>{x}</button>
+                                                 <button className='button' id="sizeBtn">{x}</button>
                                              </span>
                                          ))}
                                     </p>
