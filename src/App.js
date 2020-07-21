@@ -12,12 +12,13 @@ class App extends React.Component {
       products: data.products,
       size: "",
       sort: "",
-      cartItems : [],
+      cartItems: localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [],
     }
   }
   removeFromCart = (product) => {
     const cartItems = this.state.cartItems.slice();
     this.setState({ cartItems: cartItems.filter(x => x._id !== product._id) });
+    localStorage.setItem("cartItems", cartItems);
   }
 
   addToCart = (product) => {
@@ -33,6 +34,7 @@ class App extends React.Component {
       cartItems.push({ ...product, count: 1 });
     }
     this.setState({ cartItems });
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }
 
   sortProducts = (event)=> {
