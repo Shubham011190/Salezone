@@ -18,7 +18,8 @@ class App extends React.Component {
   removeFromCart = (product) => {
     const cartItems = this.state.cartItems.slice();
     this.setState({ cartItems: cartItems.filter(x => x._id !== product._id) });
-    localStorage.setItem("cartItems", cartItems);
+    //console.log(localStorage.getItem("cartItems"));
+    localStorage.setItem("cartItems", JSON.stringify(cartItems.filter(x => x._id !== product._id)));
   }
 
   addToCart = (product) => {
