@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import formatCurrency from '../util';
+import Fade from 'react-reveal/Fade';
 
 export default class Cart extends Component {
     constructor(props) {
@@ -35,7 +36,8 @@ export default class Cart extends Component {
                     <div className='cart cart-header'>You have {cartItems.length} product(s) in the Cart.{" "}</div>
                 }
                 <div>
-                <div className='cart'>
+                    <div className='cart'>
+                        <Fade cascade left>
                     <ul className='cart-items'>
                         {cartItems.map(item => (
                             <li key={item._id}>
@@ -50,7 +52,8 @@ export default class Cart extends Component {
                                 </div>
                             </li>
                         ))}
-                    </ul>
+                            </ul>
+                            </Fade>
                     </div>
                     {cartItems.length !== 0 && (
                         <div>
@@ -67,6 +70,7 @@ export default class Cart extends Component {
                             this.state.showCheckout && (
                             <div className='cart'>
                                         <form onSubmit={this.createOrder}>
+                                            <Fade cascade right>
                                             <ul className='form-container'>
                                                 <li>
                                                     <label>E-mail</label>
@@ -83,7 +87,8 @@ export default class Cart extends Component {
                                                 <li>
                                                     <button className='button primary' type='submit'>Checkout</button>
                                                 </li>
-                                            </ul>
+                                                </ul>
+                                                </Fade>
                                         </form>
                             </div>
                             
