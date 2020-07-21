@@ -189,3 +189,19 @@ footer{
   text-align: right;
 }
 
+
+.total{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total >div{
+  font-size: 2rem;
+}
+
+.total >div,
+.total >button{
+  flex: 1;
+}
