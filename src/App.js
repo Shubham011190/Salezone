@@ -56,7 +56,7 @@ class App extends React.Component {
   }
   filterProducts = (event) => {
     console.log(event.target.value);
-    if (event.target.value === '') {
+    if (event.target.value === '' || event.target.value==='ALL') {
       this.setState({ size : event.target.value, product: data.products });
     } else {
       this.setState({
