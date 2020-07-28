@@ -4,8 +4,8 @@ import data from './data.json';
 import Products from './components/Products';
 import Filter from './components/Filter';
 import Cart from './components/Cart';
-//import store from './store';
-//import { Provider } from 'react-redux';
+//import storePass from './store';
+import { Provider } from 'react-redux';
 class App extends React.Component {
   constructor() {
     super();
@@ -69,7 +69,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      //<Provider store={store}>
+      //<Provider store={storePass}>
       <div className='grid-container'>
         <header>
           <a href='/'>Wamazona</a>
